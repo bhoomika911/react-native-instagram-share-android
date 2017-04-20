@@ -1,0 +1,31 @@
+{
+  "name": "react-native-instagram-share-android",
+  "description": "A React Native module that allows you to share image with instagram from android.",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhoomika911/react-native-instagram-share-android.git"
+  },
+  "nativePackage": true,
+  "author": "Bhoomika Kathiriya (bhoomika911)",
+  "contributors": [
+    {
+      "name": "Bhoomika Kathiriya",
+      "email": "bhoomi9111210@gmail.com"
+    }
+  ],
+  "keywords": [
+    "react-native",
+    "react-native-instagram-share-android",
+    "react",
+    "native",
+    "image",
+    "picker"
+  ],
+  "scripts": {
+    "prepublish": "rm -rf android/build node_modules"
+  },
+  "types": "./index.d.ts"
+}
+
