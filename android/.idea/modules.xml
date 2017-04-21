@@ -4,12 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyMaterialDesignRNative.iml" filepath="$PROJECT_DIR$/MyMaterialDesignRNative.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-actionsheet-native/android/react-native-actionsheet-native.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-actionsheet-native/android/react-native-actionsheet-native.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-android-statusbar/react-native-android-statusbar.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-android-statusbar/react-native-android-statusbar.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-barcodescanner/android/react-native-barcodescanner.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-barcodescanner/android/react-native-barcodescanner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-fingerprint-android/android/react-native-fingerprint-android.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-fingerprint-android/android/react-native-fingerprint-android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-image-picker/android/react-native-image-picker.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-image-picker/android/react-native-image-picker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/@remobile/react-native-splashscreen/android/react-native-splashscreen.iml" filepath="$PROJECT_DIR$/../node_modules/@remobile/react-native-splashscreen/android/react-native-splashscreen.iml" />
     </modules>
   </component>
 </project>

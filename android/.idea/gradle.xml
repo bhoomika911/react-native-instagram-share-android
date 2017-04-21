@@ -9,12 +9,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/../node_modules/@remobile/react-native-splashscreen/android" />
-            <option value="$PROJECT_DIR$/../node_modules/react-native-actionsheet-native/android" />
-            <option value="$PROJECT_DIR$/../node_modules/react-native-android-statusbar" />
-            <option value="$PROJECT_DIR$/../node_modules/react-native-barcodescanner/android" />
-            <option value="$PROJECT_DIR$/../node_modules/react-native-fingerprint-android/android" />
-            <option value="$PROJECT_DIR$/../node_modules/react-native-image-picker/android" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
