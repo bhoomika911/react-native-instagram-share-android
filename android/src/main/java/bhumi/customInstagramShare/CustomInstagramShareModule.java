@@ -109,7 +109,7 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
         List<ApplicationInfo> packages;
         PackageManager pm;
 
-        pm = getPackageManager();
+        pm = mActivity.getPackageManager();
         packages = pm.getInstalledApplications(0);
         for (ApplicationInfo packageInfo : packages) {
             if(packageInfo.packageName.equals(targetPackage))
