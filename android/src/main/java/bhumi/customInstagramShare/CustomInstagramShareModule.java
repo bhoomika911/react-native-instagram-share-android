@@ -73,7 +73,7 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
        String type = "image/*";
        String filename = mediaPath.substring(mediaPath.lastIndexOf("/")+1);
 
-       if(isPackageExisted("com.instagram.android") == false){
+       if(isAppInstalled("com.instagram.android") == false){
          callback.invoke("Sorry,instagram is not installed in your device.");
        }else{
          // Create the new Intent using the 'Send' action.
@@ -105,17 +105,16 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
 
     }
 
-    public boolean isPackageExisted(String targetPackage){
-        List<ApplicationInfo> packages;
-        PackageManager pm;
-
-        pm = mActivity.getPackageManager();
-        packages = pm.getInstalledApplications(0);
-        for (ApplicationInfo packageInfo : packages) {
-            if(packageInfo.packageName.equals(targetPackage))
-                return true;
+    private boolean isAppInstalled(String packageName) {
+        PackageManager pm = getPackageManager();
+        boolean installed = false;
+        try {
+           pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+           installed = true;
+        } catch (PackageManager.NameNotFoundException e) {
+           installed = false;
         }
-        return false;
+        return installed;
     }
 
 }
