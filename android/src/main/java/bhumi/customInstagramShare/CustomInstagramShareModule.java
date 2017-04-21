@@ -106,7 +106,7 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
     }
 
     private boolean isAppInstalled(String packageName) {
-        PackageManager pm = getPackageManager();
+        PackageManager pm = mActivity.getPackageManager();
         boolean installed = false;
         try {
            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
