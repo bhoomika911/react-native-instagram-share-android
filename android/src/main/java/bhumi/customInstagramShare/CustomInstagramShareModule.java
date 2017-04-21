@@ -55,7 +55,7 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
         public void onActivityResult(Activity activity, final int requestCode, final int resultCode, final Intent intent) {
             Log.d("------------>resultCode", "" + resultCode);
             if (requestCode == INSTAGRAM_SHARE_REQUEST) {
-                callback.invoke(resultCode);
+                callback.invoke("Image shared successfully with instagram.");
             }
         }
     }
@@ -70,25 +70,28 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
         this.callback = callback;
 
        String type = "image/*";
-       String filename = "/IMG-20170419-WA0013.jpg";
+       String filename = mediaPath.substring(mediaPath.lastIndexOf("/")+1);
 
-       // Create the new Intent using the 'Send' action.
-       Intent share = new Intent(Intent.ACTION_SEND);
+       if(isPackageExisted("com.instagram.android") == false){
+         callback.invoke("Sorry,instagram is not installed in your device.");
+       }else{
+         // Create the new Intent using the 'Send' action.
+         Intent share = new Intent(Intent.ACTION_SEND);
 
-       // Set the MIME type
-       share.setType(type);
-       share.setPackage("com.instagram.android");
+         // Set the MIME type
+         share.setType(type);
+         share.setPackage("com.instagram.android");
 
+         //Create the URI from the media
+         File media = new File(mediaPath);
+         Uri uri = Uri.fromFile(media);
 
-       //Create the URI from the media
-       File media = new File(mediaPath);
-       Uri uri = Uri.fromFile(media);
+         // Add the URI to the Intent.
+         share.putExtra(Intent.EXTRA_STREAM, uri);
 
-       // Add the URI to the Intent.
-       share.putExtra(Intent.EXTRA_STREAM, uri);
-
-       // Broadcast the Intent.
-       mActivity.startActivityForResult(Intent.createChooser(share, "Share to"),INSTAGRAM_SHARE_REQUEST);
+         // Broadcast the Intent.
+         mActivity.startActivityForResult(Intent.createChooser(share, "Share to"),INSTAGRAM_SHARE_REQUEST);
+       }
     }
 
     @Override
@@ -100,4 +103,18 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
     public void onNewIntent(Intent intent) {
 
     }
+
+    public boolean isPackageExisted(String targetPackage){
+        List<ApplicationInfo> packages;
+        PackageManager pm;
+
+        pm = getPackageManager();
+        packages = pm.getInstalledApplications(0);
+        for (ApplicationInfo packageInfo : packages) {
+            if(packageInfo.packageName.equals(targetPackage))
+                return true;
+        }
+        return false;
+    }
+
 }
