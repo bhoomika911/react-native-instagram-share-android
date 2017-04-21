@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+           android:duration="@android:integer/config_shortAnimTime"
+           android:fromYDelta="100%p"
+           android:toYDelta="0%p"
+    />
+<!-- From: file:/home/apex-ubuntu/Music/Desktop/Bhumi/Meteor/workspace/React-Native/InstagramSharing/node_modules/react-native-instagram-share-android/android/build/intermediates/exploded-aar/com.facebook.react/react-native/0.39.0/res/anim/slide_up.xml -->
