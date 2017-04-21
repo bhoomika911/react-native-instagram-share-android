@@ -35,6 +35,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
+import android.content.pm.PackageManager;
 
 public class CustomInstagramShareModule extends ReactContextBaseJavaModule implements ActivityEventListener {
     private Activity mActivity;
