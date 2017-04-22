@@ -7,18 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "@remobile/react-native-splashscreen": "^1.0.3",
     "alt": "^0.18.1",
     "react": "^15.4.1",
     "react-addons-shallow-compare": "^15.4.1",
     "react-native": "0.39.0",
-    "react-native-barcodescanner": "^3.1.1",
-    "react-native-button": "^1.7.1",
-    "react-native-fingerprint-android": "^0.1.4",
-    "react-native-image-picker": "^0.26.3",
-    "react-native-instagram-share-android": "0.0.5",
-    "react-native-material-design": "^0.3.7",
-    "react-native-splash-screen": "^1.0.9"
+    "react-native-instagram-share-android": "0.0.5"
   },
   "devDependencies": {
     "babel-jest": "17.0.2",

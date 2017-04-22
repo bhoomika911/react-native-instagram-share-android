@@ -1,14 +1,15 @@
 # react-native-instagram-share-android
 
-A React Native module that allows you to share image with instagram from android.
+A React Native module that allows you to share image with instagram for android.
 
 
 ## Installation
 
 ```
 npm i --save react-native-instagram-share-android
-Link it to your android project
 ```
+
+## Link it to your android project
 
 ### Manual linking
 
@@ -48,7 +49,7 @@ public class MainActivity extends ReactActivity {
 
 ```
 
-register module (in MainApplication.java)
+Register module (in MainApplication.java)
 
 Add the following import statement:
 
