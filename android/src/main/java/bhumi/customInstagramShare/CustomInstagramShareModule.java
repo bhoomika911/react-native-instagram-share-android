@@ -68,7 +68,7 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
 
     @ReactMethod
     public void shareWithInstagram(String mediaPath , Callback callback) {
-        this.callback = callback;
+       this.callback = callback;
 
        String type = "image/*";
        String filename = mediaPath.substring(mediaPath.lastIndexOf("/")+1);
@@ -76,22 +76,26 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
        if(isAppInstalled("com.instagram.android") == false){
          callback.invoke("Sorry,instagram is not installed in your device.");
        }else{
-         // Create the new Intent using the 'Send' action.
-         Intent share = new Intent(Intent.ACTION_SEND);
-
-         // Set the MIME type
-         share.setType(type);
-         share.setPackage("com.instagram.android");
-
-         //Create the URI from the media
          File media = new File(mediaPath);
-         Uri uri = Uri.fromFile(media);
+          if(media.exists()){
+            // Create the new Intent using the 'Send' action.
+            Intent share = new Intent(Intent.ACTION_SEND);
 
-         // Add the URI to the Intent.
-         share.putExtra(Intent.EXTRA_STREAM, uri);
+            // Set the MIME type
+            share.setType(type);
+            share.setPackage("com.instagram.android");
 
-         // Broadcast the Intent.
-         mActivity.startActivityForResult(Intent.createChooser(share, "Share to"),INSTAGRAM_SHARE_REQUEST);
+            //Create the URI from the media
+            Uri uri = Uri.fromFile(media);
+
+            // Add the URI to the Intent.
+            share.putExtra(Intent.EXTRA_STREAM, uri);
+
+            // Broadcast the Intent.
+            mActivity.startActivityForResult(Intent.createChooser(share, "Share to"),INSTAGRAM_SHARE_REQUEST);
+          } else{
+            callback.invoke("Sorry,file does not exist on given path.");
+          }
        }
     }
 
