@@ -14,14 +14,10 @@
     ]
   ],
   "_from": "react-native-instagram-share-android@latest",
-  "_id": "react-native-instagram-share-android@0.0.5",
+  "_id": "react-native-instagram-share-android@0.0.6",
   "_inCache": true,
   "_location": "/react-native-instagram-share-android",
   "_nodeVersion": "7.2.0",
-  "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/react-native-instagram-share-android-0.0.5.tgz_1492693430785_0.9290530094876885"
-  },
   "_npmUser": {
     "name": "bhoomika9111210",
     "email": "bhoomi9111210@gmail.com"
@@ -41,8 +37,6 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/react-native-instagram-share-android/-/react-native-instagram-share-android-0.0.5.tgz",
-  "_shasum": "b5d580c00306813f0addac5db0c64e3347dbb262",
   "_shrinkwrap": null,
   "_spec": "react-native-instagram-share-android",
   "_where": "/home/apex-ubuntu/Music/Desktop/Bhumi/Meteor/workspace/React-Native/InstagramSharing",
@@ -63,11 +57,6 @@
   "description": "A React Native module that allows you to share image with instagram from android.",
   "devDependencies": {},
   "directories": {},
-  "dist": {
-    "shasum": "b5d580c00306813f0addac5db0c64e3347dbb262",
-    "tarball": "https://registry.npmjs.org/react-native-instagram-share-android/-/react-native-instagram-share-android-0.0.5.tgz"
-  },
-  "gitHead": "96f97e4bafdc0e127592c7abd9012c5dbc0b4f20",
   "homepage": "https://github.com/bhoomika911/react-native-instagram-share-android#readme",
   "keywords": [
     "react-native",
@@ -97,5 +86,5 @@
     "prepublish": "rm -rf android/build node_modules"
   },
   "types": "./index.d.ts",
-  "version": "0.0.5"
+  "version": "0.0.6"
 }
