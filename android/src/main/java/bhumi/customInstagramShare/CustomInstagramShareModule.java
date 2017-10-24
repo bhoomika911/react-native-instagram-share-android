@@ -38,15 +38,13 @@ import java.util.TimerTask;
 import android.content.pm.PackageManager;
 
 public class CustomInstagramShareModule extends ReactContextBaseJavaModule implements ActivityEventListener {
-    private Activity mActivity;
     private ReactApplicationContext reactContext;
     private Callback callback;
 
     final int INSTAGRAM_SHARE_REQUEST = 500;
 
-    public CustomInstagramShareModule(ReactApplicationContext reactContext, Activity activity) {
+    public CustomInstagramShareModule(ReactApplicationContext reactContext) {
         super(reactContext);
-        this.mActivity = activity;
         this.reactContext = reactContext;
         this.reactContext.addActivityEventListener(new RNInstagramShareActivityEventListener());
     }
@@ -92,7 +90,7 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
             share.putExtra(Intent.EXTRA_STREAM, uri);
 
             // Broadcast the Intent.
-            mActivity.startActivityForResult(Intent.createChooser(share, "Share to"),INSTAGRAM_SHARE_REQUEST);
+            getCurrentActivity().startActivityForResult(Intent.createChooser(share, "Share to"),INSTAGRAM_SHARE_REQUEST);
           } else{
             callback.invoke("Sorry,file does not exist on given path.");
           }
@@ -110,7 +108,7 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
     }
 
     private boolean isAppInstalled(String packageName) {
-        PackageManager pm = mActivity.getPackageManager();
+        PackageManager pm = getCurrentActivity().getPackageManager();
         boolean installed = false;
         try {
            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
