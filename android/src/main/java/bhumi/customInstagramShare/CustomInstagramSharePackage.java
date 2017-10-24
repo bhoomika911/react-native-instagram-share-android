@@ -1,6 +1,5 @@
 package bhumi.customInstagramShare;
 
-import android.app.Activity;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -15,20 +14,16 @@ import java.util.List;
 
 public class CustomInstagramSharePackage implements ReactPackage {
 
-    private Activity mActivity = null;
-
-    public CustomInstagramSharePackage(Activity activity) {
-        mActivity = activity;
+    public CustomInstagramSharePackage() {
     }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-                new CustomInstagramShareModule(reactContext, mActivity)
+                new CustomInstagramShareModule(reactContext)
         );
     }
 
-    @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
     }
